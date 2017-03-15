@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Students</title>
+</head>
+<body>
+  <div id="index_title">
+    <div class="well">
+      <h1 id="index_title">Students</h1>
+    </div>
+  </div>
+  <div id="index_page">
+    <div class="well">
+      <% @students.each do |student| %>
+          <p><a href="/resumes/<%= student.id %>"><%= student.fancy_fullname %></a></p>
+          <hr></hr>
+
+      <% end %>
+    </div>
+  </div>
+  
+</body>
+</html>

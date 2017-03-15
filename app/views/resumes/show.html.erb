@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <title>Resume</title>        
+    </head>
+    <body>
+    <div class="well" id="page">
+        <div id="resume_title">
+            <p>
+                <span id="name"><%= @student.fullname%></span>
+            </p>
+            <p>
+                <span id="job_title_1">Full-Stack</span> <span id="job_title_2">Web Developer</span>
+            </p>
+        </div>
+        <div class="col-sm-7">
+        <p>
+            <span id="header">PROFILE</span>
+        </p>
+        <hr id="border_line">
+            
+            <span id="section"><%= @student.bio %></span>
+            <br></br>
+
+        </hr>
+        <% if @student.projects.length > 0 %>
+            <p>
+                <span id="header">PROJECTS</span>
+            </p>
+            <hr id="border_line">
+                
+                <% @student.projects.each do |project| %>
+                
+                    <p id="title">
+                        <span><%= project["name"] %></span>
+                    </p>
+                    <p id="sub_title">
+                        <span><%= project["description"]%></span>
+                    </p>
+                    
+                <% end %>
+            </hr>
+        <% end %>
+        <% if @student.experiences.length > 0 %>
+            <p>
+                <span id="header">EXPERIENCE</span>
+            </p>
+            <hr id="border_line">
+                
+                <% @student.experiences.each do |experience| %>
+                
+                <p id="title">
+                    <span><%= experience["job_title"] %></span>
+                </p>
+                <p id="sub_title">
+                    <span><%= experience["company_name"] %> | <%= experience["address"] %> | <%= experience["start_date"].to_date.strftime("%Y") %> - <%= experience["end_date"].to_date.strftime("%Y") %></span>
+                </p>
+                <ul>
+                    <li id="bullet">
+                        <span><%= experience["details"] %></span>
+                    </li>
+                </ul>
+                <% end %>
+            </hr>
+        <% end %>
+        </div>
+
+        <div class="col-sm-5">
+        <% if @student.skills.length > 0 %>
+            <p id="header">
+                <span>SKILLS</span>
+            </p>
+            <hr id="border_line">
+                <% @student.skills.each do |skill| %>
+
+                    <p id="bullet">
+                        <span><%= skill["name"] %></span>
+                    </p>
+
+                <% end %>
+            </hr>
+        <% end %>
+        <% if @student.educations.length > 0 %>
+            <p>
+                <span id="header">EDUCATION</span>
+            </p>
+            <hr id="border_line">
+                    <% @student.educations.each do |education| %>
+                    <p>
+                        <span id="title"><%= education["university_name"] %></span>
+                    </p>
+                    <p>
+                        <span id="bullet"><%= education["degree"] %> - <%= education["details"] %> | <%= education["start_date"].to_date.strftime("%Y") %> - <%= education["end_date"].to_date.strftime("%Y") %></span>
+                    </p>
+                    <% end %>
+            </hr>
+        <% end %>
+        
+            <p>
+                <span id="header">COMMUNITY</span>
+            </p>
+            <hr id="border_line">
+                    <p>
+                        <span id="title">Name of Organization</span>
+                    </p>
+                    <p id="bullet">
+                        <span>Brief description of duties, accomplishments, etc.</span>
+                    </p>
+                    <p id="bullet">
+                        <span>20XX - 20XX</span>
+                    </p>
+            </hr>
+        
+        <p>
+            <span id="header">CONTACT</span>
+        </p>
+
+        <hr id="border_line">
+            <p>
+                <span id="bullet"><%= @student.address %></span>
+            </p>
+            <p>
+                <span id="bullet"><%= @student.email %></span>
+            </p>
+            <p>
+                <span id="url_title">github</span><span id="bullet"><%= @student.github_url[6..@student.github_url.length] %></span>
+            </p>
+            <p>
+                <span id="url_title">linkedin</span><span id="bullet"><%= @student.linkedIn_url[8..@student.linkedIn_url.length] %></span>
+            </p>
+            <p>
+                <span id="url_title">medium</span><span id="bullet"><%= @student.personal_blog[3..@student.personal_blog.length] %></span>
+            </p>
+        </hr>
+      </div>
+      <form action="http://localhost:3000/resumes/<%=@student.id%>.pdf">
+        <input type="submit" value="Download PDF" class="btn btn-info">
+    </form>
+    </div>
+
+</html>

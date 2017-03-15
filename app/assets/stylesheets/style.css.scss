@@ -1,0 +1,104 @@
+body {
+  background-image: image-url("circles.png");
+}
+
+#index_page, #page {
+  width:900px; 
+  margin: auto;
+}
+
+.well {
+  
+}
+
+#index_title {
+  width:900px; 
+  margin: auto; 
+  text-align: center;
+}
+
+#border_line {
+  background-color: #000000;
+  height: 1px;
+  width: 98%;
+
+}
+
+
+.body {
+  border-style: solid;
+}
+
+#resume_title {
+  text-align: center;
+  width: 820px;
+}
+
+#name {
+  font-size:35px;
+  font-family:NDRDWK+Arial-BoldMT;
+  color:#000000;
+  font-weight:bold;
+  letter-spacing:0.87206px;
+}
+
+#job_title_1 {
+  font-size:19px;
+  font-family:RZSTTN+ArialMT;
+  color:#000000;
+  letter-spacing:0.97199px;
+}
+
+#job_title_2 {
+  font-size:19px;
+  font-family:NDRDWK+Arial-BoldMT;
+  color:#000000;
+  font-weight:bold;
+  letter-spacing:0.97199px;
+}
+
+#header {
+  font-size:16px;
+  font-family:NDRDWK+Arial-BoldMT;
+  color:#699dad;
+  font-weight:bold;
+  letter-spacing:0.97276px;
+}
+
+#title {
+  font-size:12px;
+  font-family:NDRDWK+Arial-BoldMT;
+  color:#000000;
+  font-weight:bold;
+  letter-spacing:0.97276px;
+}
+
+#section {
+  font-size:11px;
+  font-family:RZSTTN+ArialMT;
+  color:#000000;
+  letter-spacing:0.97276px;
+
+}
+
+#sub_title {
+  font-size:11px;
+  font-family:NDRDWK+ArialMT;
+  color:#7f7f7f;
+  letter-spacing:0.97276px;
+}
+
+#url_title {
+  font-size:11px;
+  font-family:NDRDWK+Arial-BoldMT;
+  color:#000000;
+  font-weight:bold;
+  letter-spacing:0.97276px;
+}
+
+#bullet {
+  font-size:11px;
+  font-family:RZSTTN+ArialMT;
+  color:#000000;
+  letter-spacing:0.97276px;
+}
